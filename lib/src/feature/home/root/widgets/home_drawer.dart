@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -105,7 +107,38 @@ class _HomeDrawerState extends State<HomeDrawer> {
                     asset: Assets.support,
                     title: TextConstants.support,
                   ),
-                  const SizedBox(height: 50),
+
+                  if (!Platform.isIOS)
+                    ListTile(
+                      title: GestureDetector(
+                        onTap: () {
+                          Get.find<DashboardViewController>().logout();
+                        },
+                        child: SizedBox(
+                          height: 30,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.delete,
+                                size: 26,
+                                color: AppColors.red.withOpacity(0.7),
+                              ),
+                              const SizedBox(width: 22),
+                              Text(
+                                TextConstants.deleteAccount,
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontFamily: 'NotoSerifBengali',
+                                  color: AppColors.red.withOpacity(0.7),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  else
+                    const SizedBox(height: 50),
                   _buildLogoutTile(),
                   const SizedBox(height: 67),
                 ],
@@ -200,7 +233,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
           );
         },
         child: const SizedBox(
-          height: 50,
+          height: 30,
           child: Row(
             children: [
               Icon(

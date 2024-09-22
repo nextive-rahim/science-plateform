@@ -109,6 +109,7 @@ class TextConstants {
   static const String send = "Send";
   static const String cancel = "Cancel";
   static const String logout = "Logout";
+  static const String deleteAccount = "Delete Account";
   static const String update = "সংরক্ষণ";
   static const String reply = "রিপ্লাই";
   static const String next = "Next";
