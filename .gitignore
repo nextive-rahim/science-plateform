@@ -12,7 +12,6 @@
 .buildlog/
 .history
 .svn/
-.fvm/flutter_sdk
 
 # IntelliJ related
 *.iml
@@ -137,5 +136,8 @@ app.*.symbols
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
 !.vscode/settings.json
-.fvm/flutter_sdk
-.fvm/fvm_config.json
+
+# FVM Version Cache
+.fvm/
+.vscode/
+.fvmrc
