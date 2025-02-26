@@ -8,6 +8,7 @@ import 'package:science_platform/src/core/page_state/state.dart';
 import 'package:science_platform/src/core/theme/colors.dart';
 import 'package:science_platform/src/feature/classroom/root/controller/classroom_view_controller.dart';
 import 'package:science_platform/src/feature/dashboard/controller/dashboard_view_controller.dart';
+import 'package:science_platform/src/feature/home/root/widgets/delete_dailog.dart';
 import 'package:science_platform/src/feature/home/root/widgets/logout_dialog.dart';
 import 'package:science_platform/src/feature/profile/controller/profile_view_controller.dart';
 import 'package:science_platform/src/feature/profile/model/user_model.dart';
@@ -108,11 +109,17 @@ class _HomeDrawerState extends State<HomeDrawer> {
                     title: TextConstants.support,
                   ),
 
-                  if (!Platform.isIOS)
+                  if (Platform.isIOS)
                     ListTile(
                       title: GestureDetector(
                         onTap: () {
-                          Get.find<DashboardViewController>().logout();
+                          deleteDailog(
+                              context: context,
+                              message:
+                                  'Are you sure you want to delete your account? This action is irreversible and will permanently remove all your data.',
+                              onTap: () {
+                                Get.find<DashboardViewController>().logout();
+                              });
                         },
                         child: SizedBox(
                           height: 30,
