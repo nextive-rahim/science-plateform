@@ -6,6 +6,7 @@ import 'package:science_platform/src/core/theme/text_style.dart';
 import 'package:science_platform/src/core/validators/input_form_validators.dart';
 import 'package:science_platform/src/feature/profile/controller/profile_view_controller.dart';
 import 'package:science_platform/src/feature/profile/view/profile_info_page.dart';
+import 'package:science_platform/src/utils/app_constants.dart';
 import 'package:science_platform/src/utils/text_constants.dart';
 import 'package:science_platform/src/widgets/common_dialog.dart';
 import 'package:science_platform/src/widgets/gradient_text.dart';
@@ -199,7 +200,7 @@ class _UploadProfilePicture extends StatelessWidget {
                             height: 147,
                             width: 147,
                             child: Image.network(
-                              controller.userModel.image?.link ?? '',
+                              controller.userModel.image?.link ?? noProfileFoundURL,
                               fit: BoxFit.cover,
                             ),
                           ),
