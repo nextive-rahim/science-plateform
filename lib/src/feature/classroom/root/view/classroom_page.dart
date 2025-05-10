@@ -39,7 +39,7 @@ class ClassroomPage extends GetView<ClassroomViewController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const PillTitle(title: 'My Courses'),
+                const PillTitle(title: 'Special Feature'),
                 MyCoursesTab(
                   controller: controller,
                 ),

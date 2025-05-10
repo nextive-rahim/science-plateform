@@ -11,7 +11,7 @@ class MyCoursesPage extends GetView<ClassroomViewController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(TextConstants.myCourse),
+        title: const Text('Special Feature'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

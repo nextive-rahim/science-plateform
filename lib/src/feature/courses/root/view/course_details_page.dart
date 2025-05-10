@@ -92,7 +92,7 @@ class CourseDetailsPage extends GetView<CourseDetailsViewController> {
               ),
             ),
           ),
-          _buildPaymentButton(),
+        //  _buildPaymentButton(),
         ],
       ),
     );
