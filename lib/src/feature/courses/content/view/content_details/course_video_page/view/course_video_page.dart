@@ -100,13 +100,13 @@ class _CourseVideoPageState extends State<CourseVideoPage> {
               ],
               bottomActions: [
                 BackwardButton(controller: youtubePlayerController),
-                CurrentPosition(),
-                ProgressBar(
+                const CurrentPosition(),
+                const ProgressBar(
                   isExpanded: true,
                 ),
-                RemainingDuration(),
+                const RemainingDuration(),
                 ForwardButton(controller: youtubePlayerController),
-                FullScreenButton(),
+                const FullScreenButton(),
               ],
             ),
             onExitFullScreen: () {

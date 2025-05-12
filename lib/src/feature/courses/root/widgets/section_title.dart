@@ -2,9 +2,8 @@ part of '../view/course_details_page.dart';
 
 class _SectionTitle extends StatelessWidget {
   const _SectionTitle({
-    Key? key,
     required this.title,
-  }) : super(key: key);
+  });
   final String title;
 
   @override

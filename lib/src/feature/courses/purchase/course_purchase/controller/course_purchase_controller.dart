@@ -78,7 +78,7 @@ class CoursePurchaseController extends GetxController {
       );
       bkashWebviewUrl = bkashModel.url!;
       _digitalPaymentStateController(PageState.success);
-      Get.offNamed(Routes.bkashWebview);
+      Get.offNamed(Routes.bkashWebview, arguments: bkashWebviewUrl);
     } catch (e, stackTrace) {
       Log.error(e.toString());
       Log.error(stackTrace.toString());

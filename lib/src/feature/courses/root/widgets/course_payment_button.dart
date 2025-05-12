@@ -196,7 +196,7 @@ class _CoursePaymentButton extends StatelessWidget {
                     ? 'Not Available'
                     : controller.coursePrice.value == 0
                         ? TextConstants.enrollForFree
-                        : TextConstants.tapToBuy,
+                        : TextConstants.enrollNow,
                 style: AppTextStyle.semiBold16
                     .copyWith(fontSize: 14, height: 0, color: AppColors.white),
               ),

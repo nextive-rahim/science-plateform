@@ -273,7 +273,7 @@ class TextConstants {
   static const String freeExam = "ফ্রি পরীক্ষা";
 
   static const String enrollForFree = "Enroll for free";
-  static const String tapToBuy = "Enroll Now";
+  static const String enrollNow = "Enroll Now";
   static const String orderPending = "Order is pending, please wait.";
   static const String admissionIsNotOpen = "ভর্তি শুরু হবে";
   static const String admissionEnded = "ভর্তির সময় শেষ";
@@ -453,4 +453,17 @@ class TextConstants {
   /// Snackbar
   static const String comingSoon = "Coming Soon";
   static const String stayWithUs = "Stay with us";
+
+  /// Bkash Call back
+  static const String failurMessage =
+      'https://www.scienceplatformbd.com/payment/failure';
+  static const String successMessage =
+      'https://www.scienceplatformbd.com/payment/success';
+  static const String cencelMessage =
+      'https://www.scienceplatformbd.com/payment/cancel';
+  static const String cencel = 'cancel';
+  static const String success = 'success';
+  static const String enrollFailed = 'Enroll failed';
+  static const String enrollSuccessful = 'Enroll successful';
+  static const String failure = 'Failure';
 }

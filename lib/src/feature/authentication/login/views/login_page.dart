@@ -111,34 +111,34 @@ class LoginPage extends GetView<LoginViewController> {
     );
   }
 
-  Obx _buildRememberMe() {
-    return Obx(
-      () => GestureDetector(
-        onTap: () {
-          controller.toggleRememberMe();
-        },
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              controller.rememberMe.value == true
-                  ? Icons.check_box
-                  : Icons.check_box_outline_blank,
-              color: AppColors.primary,
-              size: 18,
-            ),
-            const SizedBox(width: 5),
-            Text(
-              TextConstants.rememberMe,
-              style: AppTextStyle.regular12.copyWith(
-                color: AppColors.lightBlack60,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  // Obx _buildRememberMe() {
+  //   return Obx(
+  //     () => GestureDetector(
+  //       onTap: () {
+  //         controller.toggleRememberMe();
+  //       },
+  //       child: Row(
+  //         mainAxisAlignment: MainAxisAlignment.center,
+  //         children: [
+  //           Icon(
+  //             controller.rememberMe.value == true
+  //                 ? Icons.check_box
+  //                 : Icons.check_box_outline_blank,
+  //             color: AppColors.primary,
+  //             size: 18,
+  //           ),
+  //           const SizedBox(width: 5),
+  //           Text(
+  //             TextConstants.rememberMe,
+  //             style: AppTextStyle.regular12.copyWith(
+  //               color: AppColors.lightBlack60,
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 
   Widget _buildFooter() {
     return Column(
