@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "338618335013",
+    "project_id": "science-platform-ba699",
+    "storage_bucket": "science-platform-ba699.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338618335013:android:5b1570bc8e25e54bb7a4cc",
+        "android_client_info": {
+          "package_name": "com.nextive.science.science_plateform"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQb4RTiBkbHZKTLs_vQA_2hkhRf2XlhF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
