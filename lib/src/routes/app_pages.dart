@@ -15,6 +15,7 @@ import 'package:science_platform/src/feature/courses/content/view/content_detail
 import 'package:science_platform/src/feature/courses/content/view/content_list_page.dart';
 import 'package:science_platform/src/feature/courses/free_courses/view/free_classes_page.dart';
 import 'package:science_platform/src/feature/courses/free_courses/view/free_exams_page.dart';
+import 'package:science_platform/src/feature/courses/purchase/checkout/view/bkash_webviewe.dart';
 import 'package:science_platform/src/feature/courses/purchase/checkout/view/checkout_page.dart';
 import 'package:science_platform/src/feature/courses/purchase/checkout/view/congratulation_page.dart';
 import 'package:science_platform/src/feature/courses/root/binding/course_details_binding.dart';
@@ -345,6 +346,12 @@ class AppPages {
       transition: Transition.fade,
       name: Routes.webviewPage,
       page: () => const WebviewPage(),
+    ),   GetPage(
+      name: Routes.bkashWebview,
+      page: () => const BkashWebViewPage(),
+      transition: Transition.fade,
+      // curve: Curves.easeInOut,
+      // transitionDuration: const Duration(milliseconds: 300),
     ),
   ];
 }

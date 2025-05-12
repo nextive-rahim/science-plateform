@@ -74,15 +74,15 @@ class CourseCard extends StatelessWidget {
                           color: AppColors.lightBlack90,
                         ),
                       ),
-                      // const Spacer(),
-                      // (showDetails == true)
-                      //     ? Row(
-                      //         crossAxisAlignment: CrossAxisAlignment.end,
-                      //         children: [
-                      //           _buildPrice(course),
-                      //         ],
-                      //       )
-                      //     : const SizedBox(),
+                      const Spacer(),
+                      (showDetails == true)
+                          ? Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                _buildPrice(course),
+                              ],
+                            )
+                          : const SizedBox(),
                     ],
                   ),
                 ),

@@ -1,6 +1,5 @@
 import 'package:science_platform/src/feature/classroom/root/controller/classroom_view_controller.dart';
 import 'package:science_platform/src/feature/classroom/root/widgets/my_courses_tab.dart';
-import 'package:science_platform/src/utils/text_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -6,7 +6,6 @@ import 'package:science_platform/src/core/theme/colors.dart';
 import 'package:science_platform/src/core/theme/text_style.dart';
 import 'package:science_platform/src/feature/courses/purchase/checkout/controller/checkout_view_controller.dart';
 import 'package:science_platform/src/feature/courses/purchase/checkout/model/order_model.dart';
-import 'package:science_platform/src/feature/courses/purchase/checkout/widgets/manual_payment_section.dart';
 import 'package:science_platform/src/feature/courses/purchase/course_purchase/controller/course_purchase_controller.dart';
 import 'package:science_platform/src/feature/courses/purchase/widgets/checkout_info_type_item.dart';
 import 'package:science_platform/src/feature/courses/root/model/course_model.dart';
@@ -27,7 +26,7 @@ class CheckoutPage extends GetView<CheckoutViewController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          TextConstants.checkout,
+          'Summary',
           style: AppTextStyle.semibold18,
         ),
       ),
@@ -39,32 +38,32 @@ class CheckoutPage extends GetView<CheckoutViewController> {
         ),
         child: Obx(() {
           if (controller.isLoading) {}
-          if (controller.coursePurchaseController.orderDataModel == null) {
-            return Column(
-              children: [
-                _OrderSummery(controller: controller),
-                const SizedBox(height: 15),
-                _buildDigitalPaymentSection(
-                  controller.payableAmount,
-                  controller.courseModel!,
-                ),
-              ],
-            );
-          } else {
-            return Column(
-              children: [
-                _OrderDetails(
-                  orderData:
-                      controller.coursePurchaseController.orderDataModel!,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                ManualPaymentContainer(
-                    controller: controller.coursePurchaseController)
-              ],
-            );
-          }
+          // if (controller.coursePurchaseController.orderDataModel == null) {
+          return Column(
+            children: [
+              _OrderSummery(controller: controller),
+              const SizedBox(height: 15),
+              _buildDigitalPaymentSection(
+                controller.payableAmount,
+                controller.courseModel!,
+              ),
+            ],
+          );
+          // } else {
+          //   return Column(
+          //     children: [
+          //       _OrderDetails(
+          //         orderData:
+          //             controller.coursePurchaseController.orderDataModel!,
+          //       ),
+          //       const SizedBox(
+          //         height: 20,
+          //       ),
+          //       ManualPaymentContainer(
+          //           controller: controller.coursePurchaseController)
+          //     ],
+          //   );
+          // }
         }),
       ),
       floatingActionButton: Padding(
@@ -74,83 +73,56 @@ class CheckoutPage extends GetView<CheckoutViewController> {
         ),
         child: Obx(
           () {
-            if (controller.coursePurchaseController.orderDataModel == null) {
-              return PrimaryButton(
-                onTap: controller.coursePurchaseController.placeOrder,
-                isLoading: controller.isLoading,
-                widget: Text(
-                  TextConstants.payNow,
-                  style: AppTextStyle.bold16.copyWith(color: AppColors.white),
-                ),
-              );
-            } else {
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Obx(() => PrimaryButton(
-                        onTap: () {
-                          // if (  controller.coursePurchaseController.selectedPaymentMethod ==
-                          //     TextConstants.manualPayment) {
-                          if (controller
-                              .coursePurchaseController.hasPaymentData) {
-                            Get.snackbar(
-                              'Failed',
-                              'Please add all the required fields!',
-                              snackPosition: SnackPosition.BOTTOM,
-                            );
-                            return;
-                          }
-                          controller.coursePurchaseController.placePaymentOrder(
-                            controller.coursePurchaseController.orderDataModel,
-                            controller.coursePurchaseController.formKey,
-                          );
-                        },
-                        //  else {
-                        //   Get.snackbar(
-                        //     'Error!',
-                        //     'Please select a payment method first!',
-                        //     snackPosition: SnackPosition.BOTTOM,
-                        //   );
-                        // }
-                        //  },
-                        isLoading:
-                            controller.coursePurchaseController.isLoading,
-                        widget: Text(
-                          TextConstants.submit,
-                          style: AppTextStyle.bold16
-                              .copyWith(color: AppColors.white),
-                        ),
-                      ))
-                  // const Text(
-                  //   'Select Payment Method',
-                  //   style: TextStyle(
-                  //     fontSize: 16,
-                  //     fontWeight: FontWeight.w500,
-                  //     height: 27 / 16,
-                  //     color: AppColors.lightBlack40,
-                  //   ),
-                  // ),
-                  // const SizedBox(height: 15),
-                  // AamarPayContainer(
-                  //   isSandBox: false,
-                  //   orderModel:
-                  //       controller.coursePurchaseController.orderDataModel,
-                  //   child: Obx(
-                  //     () => AbsorbPointer(
-                  //       absorbing: controller.isLoading,
-                  //       child: Opacity(
-                  //         opacity: controller.isLoading ? 0.5 : 1,
-                  //         child: const PaymentMethodCard(
-                  //           logo: Assets.aamarPayLogo,
-                  //           isLoading: false,
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
-                ],
-              );
-            }
+            // if (controller.coursePurchaseController.orderDataModel == null) {
+            return PrimaryButton(
+              onTap: () {
+                controller.coursePurchaseController.placeOrder().then((v) {
+                  controller.coursePurchaseController.bkashPaymentOrder(
+                      controller.coursePurchaseController.orderDataModel!.id);
+                });
+              },
+              isLoading: controller.isLoading,
+              widget: Text(
+                'Pay for your session',
+                style: AppTextStyle.bold16.copyWith(color: AppColors.white),
+              ),
+            );
+            // }
+
+            //  else {
+            //   return Column(
+            //     mainAxisSize: MainAxisSize.min,
+            //     children: [
+            //       Obx(
+            //         () => PrimaryButton(
+            //           onTap: () {
+            //             // if (  controller.coursePurchaseController.selectedPaymentMethod ==
+            //             //     TextConstants.manualPayment) {
+            //             if (controller
+            //                 .coursePurchaseController.hasPaymentData) {
+            //               Get.snackbar(
+            //                 'Failed',
+            //                 'Please add all the required fields!',
+            //                 snackPosition: SnackPosition.BOTTOM,
+            //               );
+            //               return;
+            //             }
+            //             controller.coursePurchaseController.placePaymentOrder(
+            //               controller.coursePurchaseController.orderDataModel,
+            //               controller.coursePurchaseController.formKey,
+            //             );
+            //           },
+            //           isLoading: controller.coursePurchaseController.isLoading,
+            //           widget: Text(
+            //             TextConstants.submit,
+            //             style: AppTextStyle.bold16
+            //                 .copyWith(color: AppColors.white),
+            //           ),
+            //         ),
+            //       )
+            //     ],
+            //   );
+            // }
           },
         ),
       ),
@@ -167,7 +139,7 @@ class CheckoutPage extends GetView<CheckoutViewController> {
           ? Column(
               children: [
                 _LabeledRadio(
-                  label: '${TextConstants.fullPayment} ৳ $coursePrice',
+                  label: '${'In-total'} ৳ $coursePrice',
                   coursePurchaseController: controller.coursePurchaseController,
                   value:
                       controller.coursePurchaseController.getFullPriceItemValue,

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:science_platform/src/core/logger.dart';
 import 'package:science_platform/src/core/page_state/state.dart';
 import 'package:science_platform/src/feature/classroom/root/controller/classroom_view_controller.dart';
+import 'package:science_platform/src/feature/courses/purchase/checkout/model/bkash_model.dart';
 import 'package:science_platform/src/feature/courses/purchase/checkout/model/cart_model.dart';
 import 'package:science_platform/src/feature/courses/purchase/checkout/model/order_model.dart';
 import 'package:science_platform/src/feature/courses/purchase/checkout/model/payment_model.dart';
@@ -27,12 +28,17 @@ class CoursePurchaseController extends GetxController {
   bool get isLoading => pageState == PageState.loading;
   late CourseModel courseModel;
 
+  final Rx<PageState> _digitalPaymentStateController = Rx(PageState.initial);
+  get digitalPaymentState => _digitalPaymentStateController.value;
+  bool get isDigitalPaymentLoading => digitalPaymentState == PageState.loading;
+
   /// Place Order
   OrderResponseModel? orderResponseModel;
   OrderDataModel? orderDataModel;
   CartModel? cartModel;
   Instalment? instalment;
   String? appliedCoupon;
+  String? bkashWebviewUrl;
 
   int impossibleItemLength = 1000;
   final int _fullPriceItemValue = -1;
@@ -59,6 +65,30 @@ class CoursePurchaseController extends GetxController {
   void onInit() {
     super.onInit();
     selectedInstalments.clear();
+  }
+
+  Future<void> bkashPaymentOrder(orderId) async {
+    _digitalPaymentStateController(PageState.loading);
+    Map<String, dynamic> requestBody = {'order_id': orderId};
+
+    try {
+      final res = await paymentRepository.bkashPaymentOrder(requestBody);
+      BkashPaymentResponseModel bkashModel = BkashPaymentResponseModel.fromJson(
+        res,
+      );
+      bkashWebviewUrl = bkashModel.url!;
+      _digitalPaymentStateController(PageState.success);
+      Get.offNamed(Routes.bkashWebview);
+    } catch (e, stackTrace) {
+      Log.error(e.toString());
+      Log.error(stackTrace.toString());
+      _digitalPaymentStateController(PageState.error);
+      Get.snackbar(
+        'Failed',
+        'Something went wrong',
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    }
   }
 
   /// Selecting or removing Instalment

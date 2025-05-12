@@ -22,7 +22,7 @@ class API {
   static const photoGalleryCategoties = "gallery";
 
   static appReviews(String type) => "all_information?type=$type";
-
+  static const bkashPayment = "bkash/create-payment";
   static photoGallery(int id) => "gallery/$id";
 
   /// Home

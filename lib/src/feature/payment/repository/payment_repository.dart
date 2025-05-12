@@ -32,4 +32,13 @@ class PaymentRepository {
 
     return res.data;
   }
+
+  Future<dynamic> bkashPaymentOrder(Map<String, dynamic> data) async {
+    final res = await RestClient.dev().post(
+      APIType.PROTECTED,
+      API.bkashPayment,
+      data,
+    );
+    return res.data;
+  }
 }

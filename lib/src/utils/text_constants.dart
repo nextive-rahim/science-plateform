@@ -113,7 +113,6 @@ class TextConstants {
   static const String update = "সংরক্ষণ";
   static const String reply = "রিপ্লাই";
   static const String next = "Next";
-  static const String buy = "Buy Now";
   static const String seeDetails = "বিস্তারিত দেখুন";
   static const String seeAll = "সবগুলো দেখুন";
   static const String addCustomerInfo = "গ্রাহক তথ্য যোগ করুন";
