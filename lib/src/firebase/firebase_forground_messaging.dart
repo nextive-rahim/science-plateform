@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:science_platform/src/core/logger.dart';
 import 'package:science_platform/src/core/service/cache/cache_keys.dart';
@@ -42,7 +43,13 @@ class FirebaseForgroundPushNotification {
   }
 
   Future<String> retrieveFCMToken() async {
-    String token = await messaging.getAPNSToken() ?? 'No FCM Token';
+    String token;
+    if (Platform.isIOS) {
+      token = await messaging.getAPNSToken() ?? 'No FCM Token';
+    } else {
+      token = await messaging.getToken() ?? 'No FCM Token';
+    }
+
     CacheService.box.write(CacheKeys.fcmToken, token);
     Log.info("APNS Token : $token");
     return token;

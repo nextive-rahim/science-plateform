@@ -10,8 +10,12 @@ class LocalPushNotification {
 
   Future<void> init() async {
     InitializationSettings initialzationSettings = const InitializationSettings(
-      android: AndroidInitializationSettings('@mipmap/ic_launcher'), 
-      iOS: DarwinInitializationSettings(),
+      android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+      iOS: DarwinInitializationSettings(
+        requestAlertPermission: true,
+        requestBadgePermission: true,
+        requestSoundPermission: true,
+      ),
     );
 
     await _localNotificationsPlugin
@@ -60,17 +64,17 @@ class LocalPushNotification {
       message.title,
       message.body,
       NotificationDetails(
-        android: _androidNotificationDetails(
-            bigPicture != null
-                ? BigPictureStyleInformation(
-                    ByteArrayAndroidBitmap.fromBase64String(bigPicture),
-                    largeIcon:
-                        ByteArrayAndroidBitmap.fromBase64String(bigPicture),
-                    hideExpandedLargeIcon: true,
-                  )
-                : null,
-            imageUrl: bigPicture),
-      ),
+          android: _androidNotificationDetails(
+              bigPicture != null
+                  ? BigPictureStyleInformation(
+                      ByteArrayAndroidBitmap.fromBase64String(bigPicture),
+                      largeIcon:
+                          ByteArrayAndroidBitmap.fromBase64String(bigPicture),
+                      hideExpandedLargeIcon: true,
+                    )
+                  : null,
+              imageUrl: bigPicture),
+          iOS: const DarwinNotificationDetails()),
       payload: message.payload,
     );
   }

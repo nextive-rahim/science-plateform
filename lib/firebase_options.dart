@@ -58,11 +58,12 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCA3R0en5WZUfd-TO2aOn_kIzyKzRXXtAk',
+    apiKey: 'AIzaSyB5yQkDb5AK4ecAUMB5iEbwrAGamFvMT18',
     appId: '1:338618335013:ios:b4f20473a56b857bb7a4cc',
-    messagingSenderId: 'science-platform-ba699',
+    messagingSenderId: '338618335013',
     projectId: 'science-platform-ba699',
     storageBucket: 'science-platform-ba699.firebasestorage.app',
     iosBundleId: 'com.nextive.science.platform',
   );
+
 }
