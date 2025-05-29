@@ -53,18 +53,18 @@ class CourseDetailsContentCard extends StatelessWidget {
           height: 20,
           color: AppColors.primary,
         ),
-        trailing: content.paid == true
-            ? Image.asset(
-                Assets.locked,
-                height: 20,
-                width: 20,
-              )
-            : Image.asset(
-                Assets.unlocked,
-                height: 20,
-                width: 20,
-                color: AppColors.primary,
-              ),
+        // trailing: content.paid == true
+        //     ? Image.asset(
+        //         Assets.locked,
+        //         height: 20,
+        //         width: 20,
+        //       )
+        //     : Image.asset(
+        //         Assets.unlocked,
+        //         height: 20,
+        //         width: 20,
+        //         color: AppColors.primary,
+        //       ),
         visualDensity: VisualDensity.compact,
         minVerticalPadding: 0,
         dense: true,
@@ -82,18 +82,18 @@ class CourseDetailsContentCard extends StatelessWidget {
     String token = CacheService.boxAuth.read(CacheKeys.token);
     final contentsViewController = Get.find<ContentsViewController>();
 
-    if (content.paid == true) {
-      if (!isEnrolled) {
-        onTap = () {
-          Get.snackbar(
-            'Message',
-            'Pay for your session!',
-            snackPosition: SnackPosition.BOTTOM,
-          );
-        };
-      }
-      //   //return;
-    }
+    // if (content.paid == true) {
+    //   if (!isEnrolled) {
+    //     onTap = () {
+    //       Get.snackbar(
+    //         'Message',
+    //         'Pay for your session!',
+    //         snackPosition: SnackPosition.BOTTOM,
+    //       );
+    //     };
+    //   }
+    //   //   //return;
+    // }
     if (contentType == CourseContentType.pdf.name) {
       leadingIcon = Assets.pdf;
       if (!onTap.isNotNull) {

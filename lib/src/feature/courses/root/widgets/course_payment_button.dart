@@ -145,12 +145,12 @@ class _CoursePaymentButton extends StatelessWidget {
                                         bottomPadding: 0,
                                         controller:
                                             controller.promoCodeController,
-                                        hintText: 'Enter Promo',
+                                        hintText: 'কুপন কোড দিন',
                                       ),
                                     ),
                                     Obx(
                                       () => RoundedButton(
-                                        title: 'Apply',
+                                        title: 'সাবমিট',
                                         backgroundColor: AppColors.primary,
                                         radius: 5,
                                         onPressed: controller.couponState ==

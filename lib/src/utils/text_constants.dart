@@ -273,7 +273,7 @@ class TextConstants {
   static const String freeExam = "ফ্রি পরীক্ষা";
 
   static const String enrollForFree = "Enroll for free";
-  static const String enrollNow = "Enroll Now";
+  static const String enrollNow = "Start Now";
   static const String orderPending = "Order is pending, please wait.";
   static const String admissionIsNotOpen = "ভর্তি শুরু হবে";
   static const String admissionEnded = "ভর্তির সময় শেষ";
@@ -291,7 +291,7 @@ class TextConstants {
   static const String totalClass = "ক্লাস";
   static const String totalNotes = "নোট";
   static const String totalExam = "এক্সাম";
-  static const String promoCode = "Promo Code";
+  static const String promoCode = "কুপন";
   static const String courseRoutine = "কোর্সের সময়সূচী:";
   static const String routineClassStart = "ব্যাচ শুরু হচ্ছে";
   static const String routineTime = "ক্লাসের সময়";
@@ -299,10 +299,10 @@ class TextConstants {
 
   /// Course purchase
   static const String checkout = "Checkout";
-  static const String total = "Total";
+  static const String total = "মোট";
   static const String inTotal = "Grand Total";
-  static const String discount = "Discount";
-  static const String haveToPay = "Have to pay";
+  static const String discount = "ডিসকাউন্ট";
+  static const String haveToPay = "পরিশোধ করতে হবে";
   static const String placeOrder = "Place Order";
   static const String orderPlaced =
       "Order has been placed! Please complete the payment.";
@@ -312,7 +312,7 @@ class TextConstants {
   static const String applyNowButton = "Apply Now";
   static const String voucher = "Voucher";
   static const String paymentMethod = "Payment Method";
-  static const String coupon = "Coupon";
+  static const String coupon = "কুপন";
   static const String deliveryCharge = "ডেলিভারি চার্জ";
   static const String selectPaymentMethod = "একটা নির্বাচন করুন";
   static const String digitalPayment = "ডিজিটাল";

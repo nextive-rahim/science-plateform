@@ -83,7 +83,7 @@ class CheckoutPage extends GetView<CheckoutViewController> {
               },
               isLoading: controller.isLoading,
               widget: Text(
-                'Pay for your session',
+                'এখনই শুরু করুন',
                 style: AppTextStyle.bold16.copyWith(color: AppColors.white),
               ),
             );
@@ -139,7 +139,7 @@ class CheckoutPage extends GetView<CheckoutViewController> {
           ? Column(
               children: [
                 _LabeledRadio(
-                  label: '${'In-total'} ৳ $coursePrice',
+                  label: '${'সর্ব মোট'} ৳ $coursePrice',
                   coursePurchaseController: controller.coursePurchaseController,
                   value:
                       controller.coursePurchaseController.getFullPriceItemValue,
