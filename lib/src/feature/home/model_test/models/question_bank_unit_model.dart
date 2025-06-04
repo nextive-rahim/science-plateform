@@ -83,8 +83,7 @@ class QuestionBankUnitModel {
         "photo": photo,
         "price": price,
         "discount": discount,
-        "discount_till":
-            discountTill?.toIso8601String(),
+        "discount_till": discountTill?.toIso8601String(),
         "discounted_price": discountedPrice,
         "order": order,
         "active": active,

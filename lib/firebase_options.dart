@@ -65,5 +65,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'science-platform-ba699.firebasestorage.app',
     iosBundleId: 'com.nextive.science.platform',
   );
-
 }

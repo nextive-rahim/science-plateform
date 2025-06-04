@@ -287,8 +287,7 @@ class ModelTestContentModel {
         "can_preview": canPreview,
         "paid": paid,
         "active": active,
-        "available_at":
-            availableAt?.toIso8601String(),
+        "available_at": availableAt?.toIso8601String(),
         "sms_to_all": smsToAll,
         "sms_to_present": smsToPresent,
         "sms_to_absent": smsToAbsent,

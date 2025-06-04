@@ -401,8 +401,7 @@ class AssignmentUser {
         "approved": approved,
         "active": active,
         "email_verified_at": emailVerifiedAt,
-        "phone_verified_at":
-            phoneVerifiedAt?.toIso8601String(),
+        "phone_verified_at": phoneVerifiedAt?.toIso8601String(),
         "deleted_at": deletedAt,
         "created_at": createdAt?.toIso8601String(),
         "updated_at": updatedAt?.toIso8601String(),

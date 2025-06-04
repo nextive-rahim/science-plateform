@@ -28,7 +28,7 @@ class NotificationNavigation {
 
   static Future<void> backgroundTabHandle(RemoteMessage initialMessage) async {
     Log.info('BackGround Message OnTapped');
-    if (initialMessage.data ['type'] == 'course') {
+    if (initialMessage.data['type'] == 'course') {
       Get.toNamed(
         Routes.courseDetails,
         arguments: initialMessage.data['action_url'],

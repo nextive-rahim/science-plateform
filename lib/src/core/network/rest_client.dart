@@ -376,7 +376,6 @@ class RestClient {
 
       case APIType.PROTECTED:
         return ProtectedApiOptions(apiToken).options;
-
     }
   }
 }

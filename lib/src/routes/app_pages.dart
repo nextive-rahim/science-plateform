@@ -346,7 +346,8 @@ class AppPages {
       transition: Transition.fade,
       name: Routes.webviewPage,
       page: () => const WebviewPage(),
-    ),   GetPage(
+    ),
+    GetPage(
       name: Routes.bkashWebview,
       page: () => const BkashWebViewPage(),
       transition: Transition.fade,

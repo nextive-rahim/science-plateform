@@ -433,8 +433,7 @@ class Instalment {
         "instalmentable_id": instalmentableId,
         "instalmentable_type": instalmentableType,
         "price": price,
-        "available_at":
-            availableAt?.toIso8601String(),
+        "available_at": availableAt?.toIso8601String(),
         "expires_at": expiresAt?.toIso8601String(),
         "duration_type": durationType,
         "duration": duration,

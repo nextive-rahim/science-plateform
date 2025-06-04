@@ -108,12 +108,6 @@ class Course {
       };
 }
 
-
-
-
-
-
-
 // class HappeningTodayModel {
 //   HappeningTodayModel({
 //     this.lives,

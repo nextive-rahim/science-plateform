@@ -200,7 +200,8 @@ class _UploadProfilePicture extends StatelessWidget {
                             height: 147,
                             width: 147,
                             child: Image.network(
-                              controller.userModel.image?.link ?? noProfileFoundURL,
+                              controller.userModel.image?.link ??
+                                  noProfileFoundURL,
                               fit: BoxFit.cover,
                             ),
                           ),

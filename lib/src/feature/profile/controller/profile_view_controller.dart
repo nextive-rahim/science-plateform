@@ -26,8 +26,7 @@ class ProfileViewController extends GetxController {
   RxBool isProfilePictureSelected = false.obs;
   File? _profilePictureFile;
 
-  File? get profilePicture =>
-      _profilePictureFile;
+  File? get profilePicture => _profilePictureFile;
   RxBool? isShowImageDailogProvider = false.obs;
   // void clearProfilePicture() {
   //   _profilePictureFile = null;

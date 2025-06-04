@@ -7,7 +7,8 @@ class BackgroundNotificationService {
       RemoteMessage message) async {
     print("Handling a background message: ${message.data}");
   }
-/// Call in Home page
+
+  /// Call in Home page
   static void setupBackgroundNotificationHandler(
       FirebaseMessaging firebaseMessaging) async {
     await backgroundNotificationHandler(firebaseMessaging: firebaseMessaging);

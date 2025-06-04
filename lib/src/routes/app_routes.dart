@@ -100,5 +100,6 @@ abstract class Routes {
 
   /// MISC
   static const updateProfilePage = '/updateProfilePage';
-  static const webviewPage = '/webviewPage'; static const bkashWebview = '/bkashWebview';
+  static const webviewPage = '/webviewPage';
+  static const bkashWebview = '/bkashWebview';
 }
