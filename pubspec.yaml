@@ -52,11 +52,7 @@ dependencies:
   image_picker: ^1.0.0
   visibility_detector: ^0.4.0+2
   webview_flutter: ^4.9.0
-  youtube_player_flutter:
-    git:
-      url: https://github.com/peterweb2005/youtube_player_flutter.git
-      ref: fullscreen-landscape
-      path: packages/youtube_player_flutter
+  youtube_player_flutter: ^9.1.1
 
 
 dev_dependencies:
