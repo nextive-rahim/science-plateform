@@ -34,18 +34,7 @@ class CheckoutViewController extends GetxController {
   double discountAmount = 0.0;
   double couponAmount = 0.0;
   double payableAmount = 0.0;
-//  bool get hasPaymentData =>
-//       receiverController.text.isEmpty ||
-//       senderController.text.isEmpty ||
-//       transactionController.text.isEmpty ||
-//       selectedVendor == null ||
-//       selectedVendor!.isEmpty;
-//   String? selectedPaymentMethod;
-//   String? selectedPaymentProvider;
-//   late PaymentResponseModel paymentResponseModel;
-//   late PaymentDataModel paymentDataModel;
-//   OrderDataModel? orderDataModel;
-//   String? selectedVendor;
+
 
   @override
   void onInit() {

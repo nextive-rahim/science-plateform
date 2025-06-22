@@ -38,7 +38,7 @@ class CheckoutPage extends GetView<CheckoutViewController> {
         ),
         child: Obx(() {
           if (controller.isLoading) {}
-          // if (controller.coursePurchaseController.orderDataModel == null) {
+
           return Column(
             children: [
               _OrderSummery(controller: controller),
@@ -49,21 +49,6 @@ class CheckoutPage extends GetView<CheckoutViewController> {
               ),
             ],
           );
-          // } else {
-          //   return Column(
-          //     children: [
-          //       _OrderDetails(
-          //         orderData:
-          //             controller.coursePurchaseController.orderDataModel!,
-          //       ),
-          //       const SizedBox(
-          //         height: 20,
-          //       ),
-          //       ManualPaymentContainer(
-          //           controller: controller.coursePurchaseController)
-          //     ],
-          //   );
-          // }
         }),
       ),
       floatingActionButton: Padding(
@@ -73,7 +58,6 @@ class CheckoutPage extends GetView<CheckoutViewController> {
         ),
         child: Obx(
           () {
-            // if (controller.coursePurchaseController.orderDataModel == null) {
             return PrimaryButton(
               onTap: () {
                 controller.coursePurchaseController.placeOrder().then((v) {
@@ -87,42 +71,6 @@ class CheckoutPage extends GetView<CheckoutViewController> {
                 style: AppTextStyle.bold16.copyWith(color: AppColors.white),
               ),
             );
-            // }
-
-            //  else {
-            //   return Column(
-            //     mainAxisSize: MainAxisSize.min,
-            //     children: [
-            //       Obx(
-            //         () => PrimaryButton(
-            //           onTap: () {
-            //             // if (  controller.coursePurchaseController.selectedPaymentMethod ==
-            //             //     TextConstants.manualPayment) {
-            //             if (controller
-            //                 .coursePurchaseController.hasPaymentData) {
-            //               Get.snackbar(
-            //                 'Failed',
-            //                 'Please add all the required fields!',
-            //                 snackPosition: SnackPosition.BOTTOM,
-            //               );
-            //               return;
-            //             }
-            //             controller.coursePurchaseController.placePaymentOrder(
-            //               controller.coursePurchaseController.orderDataModel,
-            //               controller.coursePurchaseController.formKey,
-            //             );
-            //           },
-            //           isLoading: controller.coursePurchaseController.isLoading,
-            //           widget: Text(
-            //             TextConstants.submit,
-            //             style: AppTextStyle.bold16
-            //                 .copyWith(color: AppColors.white),
-            //           ),
-            //         ),
-            //       )
-            //     ],
-            //   );
-            // }
           },
         ),
       ),
@@ -150,29 +98,6 @@ class CheckoutPage extends GetView<CheckoutViewController> {
                         .clear();
                   },
                 ),
-                // Obx(
-                //   () => coursePurchaseController.selectedInstalments.length !=
-                //           coursePurchaseController.impossibleItemLength
-                //       ? ListView.builder(
-                //           shrinkWrap: true,
-                //           physics: const NeverScrollableScrollPhysics(),
-                //           itemCount: courseModel.instalments?.length,
-                //           itemBuilder: (BuildContext context, int index) {
-                //             Instalment instalment =
-                //                 courseModel.instalments![index];
-
-                //             return _LabeledCheckBox(
-                //               label:
-                //                   '${TextConstants.payInstalment} ${instalment.price!}',
-                //               coursePurchaseController:
-                //                   coursePurchaseController,
-                //               value: index,
-                //               instalment: instalment,
-                //             );
-                //           },
-                //         )
-                //       : const SizedBox(),
-                // ),
               ],
             )
           : const SizedBox(),
